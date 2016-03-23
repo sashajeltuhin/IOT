@@ -86,7 +86,6 @@ exports.getData = function(url, port, path, heads, secure, auth, callback){
 
     mod.get(options, function(res) {
         res.setEncoding('utf-8');
-        console.log("Get response: " + res.statusCode);
         var rs = '';
         res.on("data", function(chunk) {
             rs += chunk;
