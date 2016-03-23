@@ -4,7 +4,7 @@ chai.use(chaiHttp);
 describe("Sensor Update Tests", function(){
     it('Check status', function(done){
         var should = chai.should();
-        chai.request('http://localhost:8033')
+        chai.request('https://mysensor--v1.partners.apprendalabs.com')
             .get('/sensor/update/334/12')
             .end(function(err, res){
                 if (!err) {

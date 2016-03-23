@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<appManifest xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.apprenda.com/DeploymentManifest http://apprenda.com/schemas/platform/6.0/DeploymentManifest.xsd" xmlns="http://schemas.apprenda.com/DeploymentManifest">
+  <applicationServices stickySessions="False" />
+  <linuxServices>
+    <service name="iot" throttlingPolicy="Medium">
+      <customProperties>
+        <customProperty name="Docker">
+          <values>
+            <propertyValue value="Yes" />
+          </values>
+        </customProperty>
+      </customProperties>
+      <ports>
+        <dynamicPort httpMapped="true" portName="HTTP_8033" />
+      </ports>
+    </service>
+  </linuxServices>
+</appManifest>
