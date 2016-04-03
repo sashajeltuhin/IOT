@@ -8,4 +8,4 @@ RUN 	git clone https://github.com/sashajeltuhin/IOT.git
 WORKDIR /data/dev/IOT
 RUN		npm update
 EXPOSE	8066
-CMD ["node", "app.js"]
+CMD ["PORT=8066" "node", "app.js"]
