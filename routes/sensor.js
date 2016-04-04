@@ -6,3 +6,7 @@ exports.update = function(req, res, next){
     var st = Number(sensorVal) < threshold ? "Normal" : "Elevated";
     res.send({sid: sensorID, date: date, status: st});
 }
+
+exports.getNorm = function(){
+    return Number(threshold);
+}
