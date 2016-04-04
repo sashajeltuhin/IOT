@@ -20,11 +20,11 @@ describe("Sensor Update Tests", function(){
 
     it('Within norm', function(done){
         var should = chai.should();
-        var norm = heatsensor.getNorm();
+        var norm = heatsensor.getNormObject();
         http.getData(url, null, '/sensor/update/334/15', null, true, null, function (err, result) {
             if (!err) {
                 var obj = JSON.parse(result);
-                obj.should.have.property("status").and.be.lt(norm);
+                obj.should.have.property("status").and.equal(norm.ok);
             }
             else{
                 err.should.not.exist();
@@ -36,11 +36,11 @@ describe("Sensor Update Tests", function(){
 
     it('Exceeds threshold', function(done){
         var should = chai.should();
-        var norm = heatsensor.getNorm();
+        var norm = heatsensor.getNormObject();
         http.getData(url, null, '/sensor/update/334/60', null, true, null, function (err, result) {
             if (!err) {
                 var obj = JSON.parse(result);
-                obj.should.have.property("status").and.be.gt(norm);
+                obj.should.have.property("status").and.equal(norm.high);
             }
             else{
                 err.should.not.exist();
