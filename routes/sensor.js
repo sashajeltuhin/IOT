@@ -5,7 +5,7 @@ exports.update = function(req, res, next){
     var sensorVal = req.params.val;
     var date = new Date();
     var st = Number(sensorVal) < threshold ? norm.ok : norm.high;
-    res.send({sid: sensorID, date: date, status: st, msg: "Accepted"});
+    res.send({sid: sensorID, date: date, status: st, norm: threshold});
 }
 
 exports.getNorm = function(){
