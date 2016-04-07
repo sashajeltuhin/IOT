@@ -1,4 +1,4 @@
-var threshold = 50;
+var threshold = 45;
 var norm = {ok:"Normal", high:"Elevated", low:"Low"}
 exports.update = function(req, res, next){
     var sensorID = req.params.sid;
