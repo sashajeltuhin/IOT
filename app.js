@@ -8,9 +8,13 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var errorHandler = require('errorhandler');
 var sensor = require('./routes/sensor');
-
+var main = require('./routes/main');
 
 var app = express();
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
 
 app.on('close', function () {
 
@@ -38,7 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //passport.deserializeUser( auth.deserializeUser);
 
 
-
+app.get('/', main.start);
 app.get('/sensor/update/:sid/:val', sensor.update);
 
 app.use(function(err, req, res, next){
