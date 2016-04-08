@@ -1,4 +1,4 @@
-var threshold = 45;
+var threshold = 50;
 var norm = {ok:"Normal", high:"Elevated", low:"Low"};
 var last = {sid: 44, status: "Normal", val:40};
 exports.update = function(req, res, next){
