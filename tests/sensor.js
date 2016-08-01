@@ -1,7 +1,7 @@
 var chai = require("chai");
 var heatsensor = require("../routes/sensor");
 var http = require("../core/httpservice");
-var url = "heatsensortest--v1.partners.apprendalabs.com";
+var url = "heatsensortest--v1.metapod.apprendalabs.com";
 describe("Sensor Update Tests", function(){
     it('Check status', function(done){
         var should = chai.should();
